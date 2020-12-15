@@ -12,9 +12,7 @@ const activitySchema = new Schema({
         type: String
     },
     avatar: {        
-        imageName: String,
-        path: String,
-        originalName: String,      
+        type: String     
     },
     location: {
         type: {
@@ -22,22 +20,22 @@ const activitySchema = new Schema({
         },
         coordinates: [Number]
     },
-    record:[
-        {
-        capacity:{
-            min: Number,
-            max: Number
-        },
-        users:
-            {
-            type:[ Schema.Types.ObjectId ],
-            ref: 'User', 
-        }
+    capacity:{
+        type: Number
+    },
+    users:[{
+        type:Schema.Types.ObjectId,
+        ref: 'User', 
     }],
     type:{
         name:[String],
         enum: ['ENDURANCE', 'STRENGTH', 'ANAEROBIC', 'AEROBIC']
-
+    },
+    instructor:{
+        type: String
+    },
+    time:{
+        type: Date
     }
 }, {
     timestamps: true
