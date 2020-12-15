@@ -1,0 +1,8 @@
+.activity-card{
+    margin-bottom: 30px;
+}
+
+.activity-card img {
+    height: 140px;
+    object-fit: cover;
+}
