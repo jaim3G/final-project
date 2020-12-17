@@ -26,7 +26,7 @@ class Navigation  extends Component {
     render(){
 
     return(
-     <Navbar bg="dark" variant="dark" expand="sm" >
+     <Navbar className="bg-light justify-content-between" expand="sm" >
      <Link to="/">
         <Navbar.Brand>
         <img
@@ -46,6 +46,9 @@ class Navigation  extends Component {
             <Link to="/activities">
             <Nav.Link as="div">Activities</Nav.Link>
             </Link>
+            <Link to="/team">
+            <Nav.Link as="div">Team</Nav.Link>
+            </Link>
             {this.props.loggedUser ?
                 <Nav.Link onClick={this.logOut}>Log out</Nav.Link>
                 :
@@ -55,7 +58,7 @@ class Navigation  extends Component {
             </Link>
             </>
             }
-            <Link to="/profile">
+            <Link to="#">
             <Nav.Link as="div">{this.props.loggedUser ? `Welcome, ${this.props.loggedUser.name}` : 'Welcome, Guest'}</Nav.Link>
             </Link>
             <Link to="/contact">

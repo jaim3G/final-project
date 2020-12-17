@@ -8,11 +8,11 @@ import ActivityForm from '../components/pages/Activity-form/Activity-form'
 import Navigation from '../components/layout/Navigation/Navigation'
 import Signup from '../components/pages/Signup/Signup'
 import Login from '../components/pages/Login/Login'
-import Profile from '../components/pages/Profile/Profile'
 import AuthService from './../service/auth.service'
 import Home from './pages/HomePage/Home'
 import Footer from '../components/layout/Footer/Footer'
 import ContactForm from '../components/pages/Contact/Contact'
+import Team from '../components/pages/Team/Team'
 
 class App extends Component {
   constructor(){
@@ -36,6 +36,7 @@ class App extends Component {
     <>
     <Navigation storeUser={this.setTheUser} loggedUser={this.state.loggedInUser}/>
     <main> 
+    
     <Switch>
     <Route path='/' exact component={Home} />
     <Route  path='/activities' exact render= { () => <ActivityList user={this.state.loggedInUser} />} />
@@ -43,8 +44,8 @@ class App extends Component {
     <Route path='/createactivity' render= { () => <ActivityForm />} />
     <Route path='/signup' render= { props => <Signup storeUser={this.setTheUser}  {...props} />} />
     <Route path='/login' render= { props => <Login storeUser={this.setTheUser} {...props} />} />
-    <Route path='/profile' render= { () => this.state.loggedInUser ? <Profile user={this.state.loggedInUser}/> : <Redirect to="/" /> }/>
     <Route path="/contact" render={() => <ContactForm />} />
+    <Route path="/team" render={() => <Team />} />
     </Switch>
     </main>
     <Footer storeUser={this.setTheUser} loggedUser={this.state.loggedInUser}/>

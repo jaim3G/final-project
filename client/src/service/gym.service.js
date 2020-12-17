@@ -11,5 +11,9 @@ export default class GymService {
     getActivities = () => this.apiHandler.get('/getAllActivities')
     getActivity = activityId => this.apiHandler.get(`/getOneActivity/${activityId}`)
     newActivity = activityInfo => this.apiHandler.post('/newActivity/', activityInfo)
+    editActivity = activityInfo => {
+        console.log({activityInfo})
+        return this.apiHandler.put('/editActivity', activityInfo)}
+    deleteActivity = activityInfo =>this.apiHandler.put('deleteActivity', activityInfo)
     joinClass = (user, activity) => this.apiHandler.post('/joinClass', {user, activity})
 }

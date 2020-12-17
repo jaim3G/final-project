@@ -25,7 +25,7 @@ class Signup extends Component {
         .signup(this.state.username,this.state.name,this.state.lastName,this.state.avatar,this.state.email,this.state.password)
         .then(res => {
             this.props.storeUser(res.data)
-            this.props.history.push('/profile') 
+            this.props.history.push('/') 
         })
         .catch(err => console.log(err))
     }

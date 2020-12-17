@@ -28,7 +28,7 @@ class Login extends Component {
         .login(this.state.formInfo)
         .then(res => {
             this.props.storeUser(res.data)
-            this.props.history.push('/profile') 
+            this.props.history.push('/') 
         })
         .catch(err => this.setState({showToast: true, toastText: err.response.data.message}))
     }

@@ -9,4 +9,5 @@ export default class GymService {
     }
 
     sendMail = mailInfo => this.apiHandler.post('/newMail/', mailInfo)
+    activityMail = mailInfo => this.apiHandler.post('/signupMail/', mailInfo)
 }
